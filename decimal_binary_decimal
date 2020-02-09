@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main(){
+	char opc;
+	printf("Que desea realizar (1. decimal a binario y 2. binario a decimal): ");
+	scanf("%c",&opc);
+	if(opc=='1'){
+		int n,bin[1000];
+		int i = 0;
+		printf("Ingrese un valor: ");
+		scanf("%i",&n);
+		while(n!=0){
+			bin[i] = n%2;
+			n /= 2;
+			i++;
+		}
+		i--;
+		printf("\nEl numero binario es: ");
+		while(i>=0){
+			printf("%i",bin[i]);
+			i--;
+		}
+		printf("\n");
+		system("pause");
+		system("cls"); //Limpiar pantalla
+		fflush(stdin); //Vaciar buffer
+		system("pause"); //Pausar programa
+		return 0;	
+	}
+	else if(opc=='2'){
+			int i,j,binario1[1000],binario2[1000],decimal=0;
+			char binario[1000];
+			printf("Ingrese un valor: ");
+			scanf("%s",binario);
+			for (i=0;binario[i]!='\0';i++){
+				switch(binario[i]){
+					case '0': binario1[i]=0; break;
+					case '1': binario1[i]=1; break;
+				}
+			}
+			i--;
+			for (j=0;i>=0;j++,i--){
+				binario2[j]=binario1[i];
+			}
+			for(i=0;binario[i]!='\0';i++){
+				decimal+=binario2[i]*pow(2,i);
+			}
+			printf("\nEl numero decimal es: %d",decimal);
+			printf("\n");
+			system("pause");
+			system("cls");
+			fflush(stdin);
+			system("pause");
+			return 0;
+	}
+	else if((opc!='1')&&(opc!='2')){
+		system ("color 47");
+		printf("ERROR DE OPCION\n");
+		system("pause");
+		system("cls");
+		fflush(stdin);
+		system("pause");
+		return 0;
+	}
+}
