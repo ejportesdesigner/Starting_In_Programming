@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(){
+	char nombre[100],carrera[100],materia[100];
+	char opc;
+	int i = 1,j = 1;
+	int n,id,semestre,a;
+	
+	system("color 97");
+	printf("Bienvenido al Programa de Registro 2020 (PR2020)");
+	printf("\n\n");
+	system("pause");
+	system("cls");
+	
+	do{	
+		system("color 07");
+		printf("Ingrese el numero de personas a registrar: ");
+		scanf("%i",&n);
+		for(i=1;i<=n;i++){
+			printf("%i. ",i);
+			printf("\tNombre y Apellido: ");
+			scanf("%s",&nombre);
+			fflush(stdin);
+			printf("\tDocumento de Identidad: ");
+			scanf("%i",&id);
+			printf("\tCarrera y Especialidad: ");
+			scanf("%s",&carrera);
+			fflush(stdin);
+			printf("\tSemestre que cursa: ");
+			scanf("%i",&semestre);
+			printf("\tCantidad de asignaturas cursando: ");
+			scanf("%i",&a);
+			for(j=1;j<=a;j++){
+				printf("\t");
+				printf("%i.",j);
+				printf("Ingrese la asignatura: ");
+				scanf("%s",&materia);
+				fflush(stdin);
+			}
+		printf("\n");
+		}	
+		fflush(stdin);
+		system("pause");
+		system("cls");
+		printf("Quiere finalizar: ");
+		scanf("%c",&opc);
+		if((opc=='Y')||(opc=='y')){
+			fflush(stdin);
+			system("pause");
+			return 0;
+		}
+		else{
+			fflush(stdin);
+			system("pause");
+			system("cls");
+		}
+	}while((opc=='N')||(opc=='n'));
+}
